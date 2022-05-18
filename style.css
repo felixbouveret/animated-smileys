@@ -1,0 +1,170 @@
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vh;
+  background-color: #002026;
+}
+
+.smileysContainer {
+  margin: auto;
+  display: flex;
+  gap: 16px;
+}
+
+.smiley {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #ffc061;
+}
+.smiley:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  background: radial-gradient(93.75% 96.51% at 6.25% 97.32%, #000000 0%, #ffffff 200%);
+  mix-blend-mode: overlay;
+}
+.smiley .face {
+  z-index: 2;
+  position: absolute;
+  right: 4px;
+  top: 24px;
+  display: flex;
+  gap: 4px;
+  width: 40px;
+  transition: right 0.3s ease;
+}
+.smiley .face .eye {
+  position: relative;
+  height: 8px;
+  width: 8px;
+}
+.smiley .face .eye::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  border-radius: 4px;
+  animation: eyes 10s ease infinite;
+}
+.smiley .face .mouth {
+  position: relative;
+  transform: translateY(8px);
+  border-top: solid 4px black;
+  width: 16px;
+  height: 16px;
+}
+.smiley:hover .face {
+  right: 8px;
+}
+
+.angry {
+  background-color: #ff603e;
+}
+.angry .face {
+  top: 34px;
+}
+.angry .face .eye::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12px;
+  height: 4px;
+  background-color: black;
+}
+.angry .face .eye:first-child::after {
+  transform: translateX(-50%) translateY(-6px) rotate(12deg);
+}
+.angry .face .eye:last-child::after {
+  transform: translateX(-50%) translateY(-6px) rotate(-12deg);
+}
+.angry .face .eye::before {
+  animation-delay: 2.5s;
+}
+.angry .face .mouth {
+  transform: translateY(3px) rotate(45deg);
+  border-left: 4px solid black;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-radius: 8px;
+}
+
+.sad {
+  background-color: #ff833e;
+}
+.sad .face {
+  top: 28px;
+}
+.sad .face .eye::before {
+  animation-delay: 5s;
+}
+.sad .face .mouth {
+  transform: translateY(5px) rotate(45deg);
+  border-left: 4px solid black;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-radius: 8px;
+}
+
+.pleased {
+  background-color: #ffd43e;
+}
+.pleased .face {
+  top: 18px;
+}
+.pleased .face .eye::before {
+  animation-delay: 7.5s;
+}
+.pleased .face .mouth {
+  transform: translateY(0) rotate(-135deg);
+  border-left: 4px solid black;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-radius: 8px;
+}
+
+.happy {
+  background-color: #ffed4e;
+}
+.happy .face {
+  top: 12px;
+}
+.happy .face .eye::before {
+  animation-delay: 10s;
+}
+.happy .face .mouth {
+  transform: translateY(8px);
+  height: 8px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-bottom: solid 4px black;
+  background-color: black;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+@keyframes eyes {
+  0% {
+    transform: scaleY(1);
+  }
+  2% {
+    transform: scaleY(0);
+  }
+  5% {
+    transform: scaleY(1);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
